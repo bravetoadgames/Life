@@ -42,3 +42,4 @@ while True:
     sleep_time = frame_time - (time.time() - current_time)
     if sleep_time > 0:
         time.sleep(sleep_time)
+

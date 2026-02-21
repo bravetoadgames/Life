@@ -41,6 +41,11 @@ class Health:
         return self.age_expectancy
 
 
+
+    def getDead(self):
+        return self.dead
+
+
     
     # ------------------------------------------------------------------
     # Determine the probable age
@@ -75,5 +80,4 @@ class Health:
         if self.age <= self.age_expectancy:
             self.age = self.age +self.aging_tick
         else:
-            print('Died at the age of ' + str(self.getAge()) + '.') 
             self.dead = True
