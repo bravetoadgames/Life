@@ -16,3 +16,5 @@
 .spyproject/config/workspace.ini
 
 classes/__pycache__/
+
+.spyproject/config/backups/

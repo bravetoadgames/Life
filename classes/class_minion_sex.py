@@ -927,47 +927,29 @@ class Sex:
     Kai Castaneda
     Keira Townsend
     Alexis Butler
-    Athena Lambert
-    Mario Roy
-    Savanna Vang
-    Jimmy Holland
-    Mariah Morse
-    Bode Fox
-    Juliette Rowe
-    Kamden Ware
-    Eileen Robertson
-    Emiliano Garza
-    River Felix
-    Rodney Baldwin
-    Esmeralda Arroyo
-    Alberto Mejia
-    Saylor Ortega
-    Kobe Allen
-    Riley Weiss
-    Koa Robertson
-    Harmony Strickland
-     
-     
-     
      
     """ 
 
     first_name_female = [
-        "Milana",
+        "Athena", "Savanna",
+        "Mariah", "Juliette", "Eileen", "Esmeralda", "Harmony", "Milana",
         "Averie", "Karen", "Gabrielle", "Lilian", "Cameron", "Nova", "Valeria",
         "Samara", "Jaylah", "Rey", "Alexandra", "Malani", "Elisha", "Amalia",
         "Violeta", "Gracie", "Laylah", "Clementine", "Georgia", "Tinsley", 
         "Elaina", "Angela", "Claire", "Leia", "Carolyn", "Alijah", "Zoe"
         ]
     first_name_male = [
-        "Keegan", "Caleb",
+        "Mario", "Jimmy", "Bode", "Kamden", "Emiliano", "River", "Rodney", 
+        "Alberto", "Saylor", "Kobe", "Riley", "Koa", "Keegan", "Caleb",
         "John", "Rowen", "Scott", "Lance", "Baker", "Remington", "Jaylee",
         "Emmalynn", "Talon", "Avery", "Elliot", "Axl", "Andres", "Christopher",
         "Duncan", "Damir", "Bentlee", "Jordan", "Ty", "Jamari", "Raegan", 
         "Rhys", "Frederick", "Madden", "Bishop", "Nicholas", "Seth", "Travis"
         ]
     last_name = [
-        "Koch", "Parker", "Rivas", 
+        "Lambert", "Roy", "Vang", "Holland", "Morse", "Fox", "Rowe", "Ware", 
+        "Robertson", "Garza", "Felix", "Baldwin", "Arroyo", "Mejia", "Ortega", 
+        "Allen", "Weiss", "Robertson", "Strickland", "Koch", "Parker", "Rivas", 
         "Clark",  "Weeks", "Pratt", "Deleon", "McKenzie", "Dalton", "Murillo",
         "Esquivel", "Hartman", "Barker", "Murphy", "Dickson", "Moon", "Chen",
         "Campbell", "Ford", "Walters", "Shaw", "Beasley", "Magana", "Knight",
