@@ -946,12 +946,6 @@ class Sex:
     Riley Weiss
     Koa Robertson
     Harmony Strickland
-    Keegan Koch
-    Milana Parker
-    Caleb Rivas
-    Averie Clark
-     
-     
      
      
      
@@ -959,19 +953,22 @@ class Sex:
     """ 
 
     first_name_female = [
-        "Karen", "Gabrielle", "Lilian", "Cameron", "Nova", "Valeria",
+        "Milana",
+        "Averie", "Karen", "Gabrielle", "Lilian", "Cameron", "Nova", "Valeria",
         "Samara", "Jaylah", "Rey", "Alexandra", "Malani", "Elisha", "Amalia",
         "Violeta", "Gracie", "Laylah", "Clementine", "Georgia", "Tinsley", 
         "Elaina", "Angela", "Claire", "Leia", "Carolyn", "Alijah", "Zoe"
         ]
     first_name_male = [
+        "Keegan", "Caleb",
         "John", "Rowen", "Scott", "Lance", "Baker", "Remington", "Jaylee",
         "Emmalynn", "Talon", "Avery", "Elliot", "Axl", "Andres", "Christopher",
         "Duncan", "Damir", "Bentlee", "Jordan", "Ty", "Jamari", "Raegan", 
         "Rhys", "Frederick", "Madden", "Bishop", "Nicholas", "Seth", "Travis"
         ]
     last_name = [
-        "Weeks", "Pratt", "Deleon", "McKenzie", "Dalton", "Murillo",
+        "Koch", "Parker", "Rivas", 
+        "Clark",  "Weeks", "Pratt", "Deleon", "McKenzie", "Dalton", "Murillo",
         "Esquivel", "Hartman", "Barker", "Murphy", "Dickson", "Moon", "Chen",
         "Campbell", "Ford", "Walters", "Shaw", "Beasley", "Magana", "Knight",
         "Strong", "Alvarado", "Gould", "Shields", "Enriquez", "Norman",
