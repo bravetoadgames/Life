@@ -14,3 +14,5 @@
 .spyproject/config/vcs.ini
 
 .spyproject/config/workspace.ini
+
+classes/__pycache__/
