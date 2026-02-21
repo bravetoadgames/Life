@@ -17,26 +17,25 @@ os.system('clear')
 
 print("Name: " + minion.sex.getFullName())
 print("Gender: " + minion.sex.getGender())
-print("Age expectancy: " + minion.health.getAgeExpectancy())
+print("Age expectancy: " + str(minion.health.getAgeExpectancy()))
 print()
 
 
 # -------------------------------------------------------------------------
 # Game loop
 # -------------------------------------------------------------------------
-dt = 0
+delta_time = 0
 last_time = time.time()
 fps=30
 
 while True:
     current_time = time.time()
-    dt = current_time - last_time
+    delta_time = current_time - last_time
     last_time = current_time
 
     # Game logic (e.g., movement: position += speed * dt)
-    #print(f"Update with dt: {dt:.4f}s")
-    minion.setAging()
-    print(minion.getAge())
+    #print(f"Update with delta_time: {delta_time:.4f}s")
+    minion.lifePulse()
 
     # Maintain target FPS
     frame_time = 1 / fps

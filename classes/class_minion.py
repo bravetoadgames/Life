@@ -8,34 +8,23 @@ from classes.class_minion_sex import Sex
 
 class Minion:
 
+    sex = Sex()
     brain = Brain()
     health = Health()
     appetite = Appetite()
     eyes = Eyes()
     hearing = Hearing()
-    sex = Sex()
     
     thirst = 0
-    
-    life_tick = 0.01
-    age = 0
     
     def __init__(self):
         pass
 
 
+    def lifePulse(self):
+        # Do all health related stuff
+        if not self.health.dead:
+            self.health.setAging()
+        
 
-    # ------------------------------------------------------------------
-    # Get minion's age
-    # ------------------------------------------------------------------
-    def getAge(self):
-        return str(int(self.age))
-
-
-    
-    # ------------------------------------------------------------------
-    # Let the minion grow old
-    # ------------------------------------------------------------------
-    def setAging(self):
-        self.age = self.age +self.life_tick
         

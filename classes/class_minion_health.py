@@ -2,12 +2,35 @@
 import random
 
 class Health:
+    age = 0
+    aging_tick = 0.15
     age_expectancy = 0
-
+    dead = False    
 
 
     def __init__(self):
         self.setAgeExpectancy()
+
+
+
+    # ------------------------------------------------------------------
+    # Determine if minion becomes lethally ill
+    # ------------------------------------------------------------------
+    def checkSickness(self):
+        x = random.randint(0,30000)
+        
+        if x <= self.age:
+            # With aging, chance increases to become ill
+            print('Got sick at age ' + str(self.getAge()) + ' and died!')
+            self.dead = True
+
+
+
+    # ------------------------------------------------------------------
+    # Get minion's age
+    # ------------------------------------------------------------------
+    def getAge(self):
+        return int(self.age)
     
 
 
@@ -15,10 +38,10 @@ class Health:
     # Give age expectancy
     # ------------------------------------------------------------------
     def getAgeExpectancy(self):
-        return str(self.age_expectancy)
+        return self.age_expectancy
 
 
-
+    
     # ------------------------------------------------------------------
     # Determine the probable age
     # It's rare that someone gets older than 90 and even
@@ -41,3 +64,16 @@ class Health:
                         x = random.randint(1,19)
                 
         self.age_expectancy = x
+        
+
+
+    # ------------------------------------------------------------------
+    # Let the minion grow old
+    # ------------------------------------------------------------------
+    def setAging(self):
+        
+        if self.age <= self.age_expectancy:
+            self.age = self.age +self.aging_tick
+        else:
+            print('Died at the age of ' + str(self.getAge()) + '.') 
+            self.dead = True
