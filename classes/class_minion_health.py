@@ -6,6 +6,9 @@ class Health:
 
     
     
+    # ------------------------------------------------------------------
+    # Let the minion age and stay healthy (or not)
+    # ------------------------------------------------------------------
     def __init__(self):
         self.illness = Illness()
 
@@ -21,10 +24,7 @@ class Health:
     # ------------------------------------------------------------------
     def growOlder(self):
         self.setAging()
-        self.illness.checkSickness(self.age)
-        
-
-
+        self.dead = self.illness.checkSickness(int(self.age))
 
 
 
