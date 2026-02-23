@@ -1,28 +1,39 @@
 # -*- coding: utf-8 -*-
 import random
+from classes.class_minion_health_illness import Illness
 
 class Health:
-    age = 0
-    aging_tick = 0.15
-    age_expectancy = 0
-    dead = False    
 
-
+    
+    
     def __init__(self):
+        self.illness = Illness()
+
+        self.age = 0
+        self.aging_tick = 0.3
+        self.age_expectancy = 0
+        self.dead = False    
         self.setAgeExpectancy()
 
 
+    # ------------------------------------------------------------------
+    # Let the minion age and stay healthy (or not)
+    # ------------------------------------------------------------------
+    def growOlder(self):
+        self.setAging()
+        self.illness.checkSickness(self.age)
+        
+
+
+
+
+
 
     # ------------------------------------------------------------------
-    # Determine if minion becomes lethally ill
+    # Check if minion is dead (true or false)
     # ------------------------------------------------------------------
-    def checkSickness(self):
-        x = random.randint(0,30000)
-        
-        if x <= self.age:
-            # With aging, chance increases to become ill
-            print('Got sick at age ' + str(self.getAge()) + ' and died!')
-            self.dead = True
+    def isDead(self):
+        return self.dead
 
 
 
@@ -42,11 +53,6 @@ class Health:
 
 
 
-    def getDead(self):
-        return self.dead
-
-
-    
     # ------------------------------------------------------------------
     # Determine the probable age
     # It's rare that someone gets older than 90 and even
@@ -76,8 +82,12 @@ class Health:
     # Let the minion grow old
     # ------------------------------------------------------------------
     def setAging(self):
-        
-        if self.age <= self.age_expectancy:
+        if self.getAge() <= self.age_expectancy:
             self.age = self.age +self.aging_tick
         else:
+            print('Died of old age.')
+            print('-' * 79)
+            print()
             self.dead = True
+
+

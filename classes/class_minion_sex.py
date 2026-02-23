@@ -921,17 +921,10 @@ class Sex:
     Keenan Pitts
     Nala Blevins
     Avi Payne
-    London Mays
-    Jadiel Stein
-    Leilany Castillo
-    Kai Castaneda
-    Keira Townsend
-    Alexis Butler
-     
     """ 
 
     first_name_female = [
-        "Athena", "Savanna",
+        "Jadiel", "Leilany", "Keira", "Alexis", "Athena", "Savanna",
         "Mariah", "Juliette", "Eileen", "Esmeralda", "Harmony", "Milana",
         "Averie", "Karen", "Gabrielle", "Lilian", "Cameron", "Nova", "Valeria",
         "Samara", "Jaylah", "Rey", "Alexandra", "Malani", "Elisha", "Amalia",
@@ -939,6 +932,7 @@ class Sex:
         "Elaina", "Angela", "Claire", "Leia", "Carolyn", "Alijah", "Zoe"
         ]
     first_name_male = [
+        "London", "Kai",
         "Mario", "Jimmy", "Bode", "Kamden", "Emiliano", "River", "Rodney", 
         "Alberto", "Saylor", "Kobe", "Riley", "Koa", "Keegan", "Caleb",
         "John", "Rowen", "Scott", "Lance", "Baker", "Remington", "Jaylee",
@@ -947,6 +941,7 @@ class Sex:
         "Rhys", "Frederick", "Madden", "Bishop", "Nicholas", "Seth", "Travis"
         ]
     last_name = [
+        "Mays", "Stein", "Castillo", "Castaneda", "Townsend", "Butler",
         "Lambert", "Roy", "Vang", "Holland", "Morse", "Fox", "Rowe", "Ware", 
         "Robertson", "Garza", "Felix", "Baldwin", "Arroyo", "Mejia", "Ortega", 
         "Allen", "Weiss", "Robertson", "Strickland", "Koch", "Parker", "Rivas", 
@@ -959,14 +954,16 @@ class Sex:
         "Franklin", "Wise", "Cruz", "Sellers", "Russo", "Novak", "Walsh", 
         "Case", "May", "Gray", "Finley", "Gillespie", "Reese", "Green",
         ]
-    first_name = ""
-    surname = ""
-    full_name = ""
-    gender = ""
 
 
     
     def __init__(self):
+        self.first_name = ""
+        self.surname = ""
+        self.full_name = ""
+        self.gender = ""
+
+
         self.setGender()
         self.setFullName()
     
@@ -977,7 +974,7 @@ class Sex:
     # ------------------------------------------------------------------
     def isFemale(self):
         i = False
-        if self.gender == "female":
+        if self.getGender() == "female":
             i = True
         return i
 
@@ -994,20 +991,42 @@ class Sex:
 
     
     # ------------------------------------------------------------------
-    # Get minion's name
+    # Get minion's first name
+    # ------------------------------------------------------------------
+    def getFirstName(self):
+        return self.first_name
+
+
+
+    # ------------------------------------------------------------------
+    # Get the full name
     # ------------------------------------------------------------------
     def getFullName(self):
         return self.full_name
 
     
 
+    # ------------------------------------------------------------------
+    # Get the male or female gender
+    # ------------------------------------------------------------------
     def getGender(self):
         return self.gender
     
     
 
+    # ------------------------------------------------------------------
+    # Get minion's first name
+    # ------------------------------------------------------------------
+    def getSurname(self):
+        return self.surname
+
+
+
+    # ------------------------------------------------------------------
+    # Set minion's full name
+    # ------------------------------------------------------------------
     def setFullName(self):
-        if self.gender == "female":
+        if self.isFemale():
             self.first_name = self.first_name_female[random.randint(0,len(self.first_name_female))-1]
             
         else:
@@ -1018,8 +1037,13 @@ class Sex:
         self.full_name = self.first_name + " " + self.surname
         
 
+    
+    # ------------------------------------------------------------------
+    # Set the gender male or female
+    # ------------------------------------------------------------------
     def setGender(self):
         self.gender = "female"
         if random.randint(1,2) == 1:
             self.gender = "male"
+
 

@@ -11,14 +11,8 @@ from classes.class_minion import Minion
 import os
 import time
 
-minion = Minion()
-
 os.system('clear')
-
-print("Name: " + minion.sex.getFullName())
-print("Gender: " + minion.sex.getGender())
-print("Age expectancy: " + str(minion.health.getAgeExpectancy()))
-print()
+minion = Minion()
 
 
 # -------------------------------------------------------------------------
@@ -33,9 +27,16 @@ while True:
     delta_time = current_time - last_time
     last_time = current_time
 
+
+
     # Game logic (e.g., movement: position += speed * dt)
     #print(f"Update with delta_time: {delta_time:.4f}s")
-    minion.lifePulse()
+    if not minion.health.isDead():
+        minion.lifePulse()
+    else:
+        minion = Minion()
+
+
 
     # Maintain target FPS
     frame_time = 1 / fps
