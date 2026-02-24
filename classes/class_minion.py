@@ -29,7 +29,7 @@ class Minion:
     def lifePulse(self):
         # Do all health related stuff
         if not self.health.isDead():
-            self.health.growOlder()
+            self.health.setDead(self.health.growOlder())
         
 
     # ------------------------------------------------------------------

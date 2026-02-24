@@ -23,14 +23,18 @@ class Health:
     # Let the minion age and stay healthy (or not)
     # ------------------------------------------------------------------
     def growOlder(self):
-        self.setAging()
-        self.dead = self.illness.checkSickness(int(self.age))
+        self.setDead(self.illness.checkSickness(int(self.age)))
+        
+        if not self.isDead():
+            return self.setAging()
+        
+        return self.isDead()
 
 
 
 
     # ------------------------------------------------------------------
-    # Check if minion is dead (true or false)
+    # Check if minion is dead (return true or false)
     # ------------------------------------------------------------------
     def isDead(self):
         return self.dead
@@ -84,10 +88,17 @@ class Health:
     def setAging(self):
         if self.getAge() <= self.age_expectancy:
             self.age = self.age +self.aging_tick
+            return False
         else:
             print('Died of old age.')
             print('-' * 79)
             print()
-            self.dead = True
+            return True
+                    
 
 
+    # ------------------------------------------------------------------
+    # Kill the minion
+    # ------------------------------------------------------------------
+    def setDead(self, bool_dead):
+        self.dead = bool_dead
