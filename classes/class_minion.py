@@ -14,7 +14,7 @@ class Minion:
         self.brain = Brain()
         self.health = Health()
         self.appetite = Appetite()
-        self. eyes = Eyes()
+        self.eyes = Eyes()
         self.hearing = Hearing()
         
         self.thirst = 0
@@ -39,5 +39,7 @@ class Minion:
         print("Name: " + self.sex.getFullName())
         print("Gender: " + self.sex.getGender())
         print("Age expectancy: " + str(self.health.getAgeExpectancy()))
+        print("Eye color: " + self.eyes.getColor())
+        print("Eyesight: " + self.eyes.getEyeSight())
         print()
         
