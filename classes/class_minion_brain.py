@@ -1,23 +1,61 @@
 # -*- coding: utf-8 -*-
+import random
 
 class Brain:
     
 
     def __init__(self):
         self.dopamine = 100
-        self.melatonine = 100
         self.serotonin = 100
+        
+        self.setDopamine()
+        self.setSerotonin()
         
 
 
+    # ------------------------------------------------------------------
+    # Get dopamine level
+    # ------------------------------------------------------------------
+    def getDopamine(self):
+        return self.dopamine
+
+
+    # ------------------------------------------------------------------
+    # Get serotonin level
+    # ------------------------------------------------------------------
+    def getSerotonin(self):
+        return self.serotonin
+
+
+    # ------------------------------------------------------------------
+    # Set dopamine level
+    # ------------------------------------------------------------------
     def setDopamine(self):
-        pass
+        dopamine_level = 100
+
+        a = random.randint(0,100)
+
+        if a < 20:
+            dopamine_level = random.randint(80,100)
+        
+        self.dopamine = dopamine_level
 
 
-    def setMelatonine(self):
-        pass
-
-
+    # ------------------------------------------------------------------
+    # Set serotonin level
+    # ------------------------------------------------------------------
     def setSerotonin(self):
-        pass
+        serotonin_level = random.randint(85,95)
+
+        a = random.randint(0,100)
+
+        if a < 20:
+            serotonin_level = random.randint(96,100)
+            
+            b = random.randint(0,100)
+            
+            if b < 20:
+                serotonin_level = random.randint(30,84)
+                
+        self.serotonin = serotonin_level
     
