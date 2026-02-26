@@ -11,12 +11,14 @@ class Eyes:
     def __init__(self):
         
         self.color = ""
+        self.cross_eyed = False
         self.sight_eye_left = 0.0
         self.sight_eye_right = 0.0
-
-        self.setColor()
-        self.setEyeSight()
         
+        self.setColor()
+        self.setCrossEyed()
+        self.setEyeSight()
+            
 
 
     # ------------------------------------------------------------------
@@ -28,9 +30,20 @@ class Eyes:
 
 
     # ------------------------------------------------------------------
-    # Get eyesight
+    # Get cross-eyedness of minion
+    # ------------------------------------------------------------------
+    def getCrossEyed(self):
+        if self.cross_eyed == True:
+            return "Minion has cross-eyed vision"
+        return ""
+
+
+
+    # ------------------------------------------------------------------
+    # Get eyesight text
     # ------------------------------------------------------------------
     def getEyeSight(self):
+        
         if self.getSightEyeLeft() == self.getSightEyeRight():
             if self.getSightEyeLeft() == 0:
                 return "Blind"
@@ -65,21 +78,37 @@ class Eyes:
         self.color = self.colors[a]
 
 
+    
+    # ------------------------------------------------------------------
+    # Determine if minion is cross eyed
+    # ------------------------------------------------------------------
+    def setCrossEyed(self):
+
+        self.cross_eyed = False
+        
+        if random.randint(0,100) < 10:
+            self.cross_eyed = True
+                
+            
+            
+    # ------------------------------------------------------------------
+    # Set the eyesight of the minion
+    # ------------------------------------------------------------------
     def setEyeSight(self):
-        self.sight_eye_left = 100
+        self.sight_eye_left = 100                   # default 100% vision
         self.sight_eye_right = 100
 
         a = random.randint(0,100)
 
-        if a < 10:                      # minion has eye issues
+        if a < 8:                                   # minion has eye issues
             b = random.randint(30,95)
             
             self.sight_eye_left = b
             self.sight_eye_right = b
 
-            if b < 35:                  # eyes differ in sight
+            if b < 40:                              # eyes differ in sight quality
                 while self.sight_eye_left == self.sight_eye_right:
                     c = random.randint(30,95)
                     self.sight_eye_left = c
         
-                    
+            
