@@ -41,5 +41,6 @@ class Minion:
         print("Age expectancy: " + str(self.health.getAgeExpectancy()))
         print("Eye color: " + self.eyes.getColor())
         print("Eyesight: " + self.eyes.getEyeSight())
+        print(self.eyes.getCrossEyed())
         print()
         
