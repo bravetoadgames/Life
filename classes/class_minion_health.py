@@ -9,8 +9,10 @@ class Health:
     # ------------------------------------------------------------------
     # Let the minion age and stay healthy (or not)
     # ------------------------------------------------------------------
-    def __init__(self):
-        self.illness = Illness()
+    def __init__(self, emitter):
+        self.emitter = emitter
+
+        self.illness = Illness(self.emitter)
 
         self.age = 0.0
         self.aging_tick = 0.3

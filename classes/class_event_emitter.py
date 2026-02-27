@@ -15,6 +15,7 @@ class EventEmitter:
     def subscribe(self, event_type, callback):
         if event_type not in self._listeners:
             self._listeners[event_type] = []
+            
         self._listeners[event_type].append(callback)
 
 

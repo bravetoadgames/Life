@@ -957,7 +957,10 @@ class Sex:
 
 
     
-    def __init__(self):
+    def __init__(self, emitter):
+
+        self.emitter = emitter
+        
         self.first_name = ""
         self.surname = ""
         self.full_name = ""

@@ -8,8 +8,10 @@ class Eyes:
         "dark blue",
         "light blue",
         ]
-    def __init__(self):
+    def __init__(self, emitter):
         
+        self.emitter = emitter
+
         self.color = ""
         self.cross_eyed = False
         self.sight_eye_left = 0.0
