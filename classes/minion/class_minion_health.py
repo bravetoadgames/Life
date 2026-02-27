@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import random
-from classes.class_minion_health_illness import Illness
+from classes.minion.class_minion_health_illness import Illness
 
 class Health:
 

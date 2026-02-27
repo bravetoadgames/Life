@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from classes.class_minion_brain import Brain
-from classes.class_minion_digestion import Digestion
-from classes.class_minion_eyes import Eyes
-from classes.class_minion_health import Health
-from classes.class_minion_hearing import Hearing
-from classes.class_minion_sex import Sex
+from classes.minion.class_minion_brain import Brain
+from classes.minion.class_minion_digestion import Digestion
+from classes.minion.class_minion_eyes import Eyes
+from classes.minion.class_minion_health import Health
+from classes.minion.class_minion_hearing import Hearing
+from classes.minion.class_minion_sex import Sex
 from classes.class_event_emitter import EventEmitter
 class Minion:
 
