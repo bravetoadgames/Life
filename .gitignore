@@ -18,3 +18,5 @@
 classes/__pycache__/
 
 .spyproject/config/backups/
+
+classes/minion/__pycache__/
