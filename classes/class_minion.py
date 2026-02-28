@@ -11,6 +11,7 @@ class Minion:
     
     def __init__(self):
         self.events = EventEmitter()
+        self.setEmitters()
 
         self.sex = Sex(self.events)
         self.brain = Brain(self.events)
@@ -21,13 +22,12 @@ class Minion:
         
         self.thirst = 0
 
-        self.setEmitters()
 
         self.summarize()
 
 
-    def test(self):
-        pass
+    def test(self,data):
+        print("Zo zo, depressief????? f{data}")
 
     # ------------------------------------------------------------------
     # The heartbeat of a minion
@@ -37,7 +37,6 @@ class Minion:
         if not self.health.isDead():
             self.health.setDead(self.health.growOlder())
         
-
 
 
     def setEmitters(self):
