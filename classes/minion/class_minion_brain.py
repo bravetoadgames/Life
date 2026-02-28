@@ -55,14 +55,14 @@ class Brain:
 
         a = random.randint(0,100)
 
-        if a < 25:
+        if a < 30:
             serotonin_level = random.randint(96,100)
             
             b = random.randint(0,100)
             
-            if b < 25:
+            if b < 30:
                 serotonin_level = random.randint(30,84)
-                self.emitter.emit("DEPRESSION_WARNING", serotonin_level)
+                self.emitter.emit("BRAIN_DEPRESSION_WARNING", serotonin_level)
                 
         self.serotonin = serotonin_level
-    
+

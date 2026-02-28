@@ -26,9 +26,6 @@ class Minion:
         self.summarize()
 
 
-    def test(self,data):
-        print("Zo zo, depressief????? f{data}")
-
     # ------------------------------------------------------------------
     # The heartbeat of a minion
     # ------------------------------------------------------------------
@@ -39,8 +36,17 @@ class Minion:
         
 
 
+    # Create list of subscribed emitters
     def setEmitters(self):
-        self.events.subscribe("DEPRESSION_WARNING", self.test)
+        self.events.subscribe("BRAIN_DEPRESSION_WARNING", self.signalDepression)
+
+
+    # ------------------------------------------------------------------
+    # Let an emitter detect depression
+    # ------------------------------------------------------------------
+    def signalDepression(self, data):
+        print("Well well, depressed, are we?????")
+        print()
 
 
 
@@ -60,4 +66,5 @@ class Minion:
         print("Serotonin level: " + str(self.brain.getSerotonin()))
         print("Dopamine level: " + str(self.brain.getDopamine()))
         print()
+        
         
