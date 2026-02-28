@@ -1,10 +1,16 @@
-# -*- coding: utf-8 -*-
+"""
++----------------------------------------------------------------------+
+| Class Brain                                                          |
++----------------------------------------------------------------------+
+"""
 import random
 
 class Brain:
     
 
-    def __init__(self):
+    def __init__(self, emitter):
+        self.emitter = emitter
+
         self.dopamine = 100
         self.serotonin = 100
         
@@ -49,13 +55,14 @@ class Brain:
 
         a = random.randint(0,100)
 
-        if a < 20:
+        if a < 25:
             serotonin_level = random.randint(96,100)
             
             b = random.randint(0,100)
             
-            if b < 20:
+            if b < 25:
                 serotonin_level = random.randint(30,84)
+                self.emitter.emit("DEPRESSION_WARNING", serotonin_level)
                 
         self.serotonin = serotonin_level
     

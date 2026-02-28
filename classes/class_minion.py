@@ -1,27 +1,33 @@
 # -*- coding: utf-8 -*-
-from classes.class_minion_appetite import Appetite
-from classes.class_minion_brain import Brain
-from classes.class_minion_eyes import Eyes
-from classes.class_minion_health import Health
-from classes.class_minion_hearing import Hearing
-from classes.class_minion_sex import Sex
-
+from classes.minion.class_minion_brain import Brain
+from classes.minion.class_minion_digestion import Digestion
+from classes.minion.class_minion_eyes import Eyes
+from classes.minion.class_minion_health import Health
+from classes.minion.class_minion_hearing import Hearing
+from classes.minion.class_minion_sex import Sex
+from classes.class_event_emitter import EventEmitter
 class Minion:
 
     
     def __init__(self):
-        self.sex = Sex()
-        self.brain = Brain()
-        self.health = Health()
-        self.appetite = Appetite()
-        self.eyes = Eyes()
-        self.hearing = Hearing()
+        self.events = EventEmitter()
+        self.setEmitters()
+
+        self.sex = Sex(self.events)
+        self.brain = Brain(self.events)
+        self.health = Health(self.events)
+        self.digestion = Digestion(self.events)
+        self.eyes = Eyes(self.events)
+        self.hearing = Hearing(self.events)
         
         self.thirst = 0
+
 
         self.summarize()
 
 
+    def test(self,data):
+        print("Zo zo, depressief????? f{data}")
 
     # ------------------------------------------------------------------
     # The heartbeat of a minion
@@ -31,6 +37,12 @@ class Minion:
         if not self.health.isDead():
             self.health.setDead(self.health.growOlder())
         
+
+
+    def setEmitters(self):
+        self.events.subscribe("DEPRESSION_WARNING", self.test)
+
+
 
     # ------------------------------------------------------------------
     # Summary of basic minion information

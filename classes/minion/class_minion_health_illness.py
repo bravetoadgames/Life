@@ -21,7 +21,9 @@ class Illness:
 
 
 
-    def __init__(self):
+    def __init__(self, emitter):
+        self.emitter = emitter
+
         self.sickness = ""
         
         pass
