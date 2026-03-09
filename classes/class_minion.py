@@ -32,20 +32,35 @@ class Minion:
     def lifePulse(self):
         # Do all health related stuff
         if not self.health.isDead():
+            # Do all bodychecks
+            self.brain.lifePulseBrain()
+            
+            # Lastly, age a little bit
             self.health.setDead(self.health.growOlder())
+        
         
 
 
+    # ------------------------------------------------------------------
     # Create list of subscribed emitters
+    # ------------------------------------------------------------------
     def setEmitters(self):
         self.events.subscribe("BRAIN_DEPRESSION_WARNING", self.signalDepression)
+        self.events.subscribe("BRAIN_SADNESS_WARNING", self.signalSadness)
 
 
     # ------------------------------------------------------------------
     # Let an emitter detect depression
     # ------------------------------------------------------------------
     def signalDepression(self, data):
-        print("Well well, depressed, are we?????")
+        print("-- State: Depression")
+        print()
+
+    # ------------------------------------------------------------------
+    # Let an emitter detect depression
+    # ------------------------------------------------------------------
+    def signalSadness(self, data):
+        print("-- State: Sad")
         print()
 
 

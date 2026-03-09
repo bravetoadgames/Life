@@ -20,6 +20,25 @@ class Brain:
 
 
     # ------------------------------------------------------------------
+    # Single lifepulse in the brain's lifecycle
+    # ------------------------------------------------------------------
+    def lifePulseBrain(self):
+        self.checkEmitters()
+
+
+    # ------------------------------------------------------------------
+    # Check for depression and execute any consequence that follows out of that
+    # ------------------------------------------------------------------
+    def checkEmitters(self):
+        if self.getSerotonin() < 80:
+            self.emitter.emit("BRAIN_DEPRESSION_WARNING", self.getSerotonin())
+
+        if self.getDopamine() < 80:
+            self.emitter.emit("BRAIN_SADNESS_WARNING", self.getDopamine())
+
+
+        
+    # ------------------------------------------------------------------
     # Get dopamine level
     # ------------------------------------------------------------------
     def getDopamine(self):
@@ -62,7 +81,6 @@ class Brain:
             
             if b < 30:
                 serotonin_level = random.randint(30,84)
-                self.emitter.emit("BRAIN_DEPRESSION_WARNING", serotonin_level)
                 
         self.serotonin = serotonin_level
 
